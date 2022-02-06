@@ -2,6 +2,7 @@ import datetime
 
 
 start = datetime.date(2021, 6, 19)
+# today = datetime.date(2022, 2, 4)
 today = datetime.date.today()
 delta = today - start
 
