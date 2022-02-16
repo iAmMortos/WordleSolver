@@ -24,20 +24,34 @@ class WordBank (object):
   def _reduce(self, words, guess):
     ws = []
     for w in words:
+      ls = list(w)
       valid = True
       for i,c in enumerate(guess.clues):
         if c.color == ClueColor.GREEN:
-          if w[i] != c.letter:
+          if ls[i] != c.letter:
             valid = False
             break
-        elif c.color == ClueColor.YELLOW:
-          if c.letter not in w or w[i] == c.letter:
+          else:
+            ls[i] = '_'
+      if not valid:
+        continue
+            
+      for i,c in enumerate(guess.clues):
+        if c.color == ClueColor.YELLOW:
+          if c.letter not in ls or ls[i] == c.letter:
             valid = False
             break
-        elif c.color == ClueColor.BLACK:
-          if c.letter in w:
+          else:
+            ls[ls.index(c.letter)] = '_'
+      if not valid:
+        continue
+      
+      for i,c in enumerate(guess.clues):
+        if c.color == ClueColor.BLACK:
+          if c.letter in ls:
             valid = False
             break
+        
       if valid:
         ws += [w]
     return ws

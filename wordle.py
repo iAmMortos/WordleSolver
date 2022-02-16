@@ -71,7 +71,7 @@ def main():
   wb = WordBank()
   wordle.new_game()
   debug = False
-  helper = False
+  helper = True
   while(True):
     if debug:
       guess = input(f'guess ({wordle.word}): ')
