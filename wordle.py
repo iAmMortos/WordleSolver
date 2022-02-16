@@ -1,5 +1,8 @@
 
 from words import Words
+from clue_color import ClueColor
+from guess import Guess
+from wordbank import WordBank
 import random
 
 class Wordle (object):
@@ -29,31 +32,20 @@ class Wordle (object):
     self.cur_turn += 1
     return self.score(word)
     
-  def get_colorful_score(self, score):
-    out = ''
-    for c in score:
-      if c == '0':
-        out += '⬛️'
-      elif c == '1':
-        out += '🟨'
-      elif c == '2':
-        out += '🟩'
-    return out
-    
   def score(self, guess):
     if guess == self.word:
-      return '2'*len(self.word)
+      return Guess(guess, [ClueColor.GREEN]*len(self.word))
     
     gs = list(guess)
     ans = list(self.word)
-    result = ['' for _ in range(len(guess))]
+    result = [None for _ in range(len(guess))]
     
     for i in range(len(gs)):
       c = gs[i]
       if c == ans[i]:
         ans[i] = '_'
         gs[i] = '_'
-        result[i] = '2'
+        result[i] = ClueColor.GREEN
         if c not in self.found:
           self.found.append(c)
         if c in self.fuzzy:
@@ -63,24 +55,33 @@ class Wordle (object):
       c = gs[i]
       if c == '_': continue
       if c in ans:
-        result[i] = '1'
+        result[i] = ClueColor.YELLOW
         ans[ans.index(c)] = '_'
         if c not in self.fuzzy:
           self.fuzzy.append(c)
       else:
-        result[i] = '0'
+        result[i] = ClueColor.BLACK
         self.abscent.append(c)
       
-    return ''.join(result)
+    return Guess(guess, result)
 
 
 def main():
   wordle = Wordle()
+  wb = WordBank()
   wordle.new_game()
+  debug = False
+  helper = False
   while(True):
-    guess = input('guess: ')
-    print(f'answr: {wordle.word}')
-    print(wordle.get_colorful_score(wordle.guess(guess)))
+    if debug:
+      guess = input(f'guess ({wordle.word}): ')
+    else:
+      guess = input(f'guess: ')
+    g = wordle.guess(guess)
+    print(g.colorstr)
+    if helper:
+      wb.guess(g)
+      print(wb.status)
   
   
 if __name__ == '__main__':
