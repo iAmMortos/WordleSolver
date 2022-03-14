@@ -1,0 +1,136 @@
+[
+  {
+    "nodes" : [
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{5, 5}, {58, 58}}",
+        "class" : "Label",
+        "attributes" : {
+          "uuid" : "4BD0194C-AC73-4F51-8936-6BFA2C63736D",
+          "flex" : "WHR",
+          "corner_radius" : 0,
+          "background_color" : "RGBA(0.227451,0.227451,0.235294,1.000000)",
+          "frame" : "{{85, 16}, {150, 32}}",
+          "border_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+          "border_width" : 2,
+          "alignment" : "center",
+          "text_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+          "text" : "C",
+          "font_name" : "<System>",
+          "class" : "Label",
+          "name" : "lbl0",
+          "font_size" : 48
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{68, 5}, {58, 58}}",
+        "class" : "Label",
+        "attributes" : {
+          "uuid" : "4BD0194C-AC73-4F51-8936-6BFA2C63736D",
+          "font_size" : 48,
+          "corner_radius" : 0,
+          "background_color" : "RGBA(0.227451,0.227451,0.235294,1.000000)",
+          "frame" : "{{85, 16}, {150, 32}}",
+          "border_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+          "border_width" : 2,
+          "alignment" : "center",
+          "text_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+          "text" : "R",
+          "font_name" : "<System>",
+          "class" : "Label",
+          "name" : "lbl1",
+          "flex" : "WHLR"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{131, 5}, {58, 58}}",
+        "class" : "Label",
+        "attributes" : {
+          "uuid" : "4BD0194C-AC73-4F51-8936-6BFA2C63736D",
+          "flex" : "WHLR",
+          "corner_radius" : 0,
+          "background_color" : "RGBA(0.694118,0.623529,0.298039,1.000000)",
+          "frame" : "{{85, 16}, {150, 32}}",
+          "border_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+          "border_width" : 2,
+          "alignment" : "center",
+          "text_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+          "text" : "A",
+          "font_name" : "<System>",
+          "class" : "Label",
+          "name" : "lbl2",
+          "font_size" : 48
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{194, 5}, {58, 58}}",
+        "class" : "Label",
+        "attributes" : {
+          "uuid" : "4BD0194C-AC73-4F51-8936-6BFA2C63736D",
+          "flex" : "WHLR",
+          "corner_radius" : 0,
+          "background_color" : "RGBA(0.227451,0.227451,0.235294,1.000000)",
+          "frame" : "{{85, 16}, {150, 32}}",
+          "border_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+          "border_width" : 2,
+          "alignment" : "center",
+          "text_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+          "text" : "N",
+          "font_name" : "<System>",
+          "class" : "Label",
+          "name" : "lbl3",
+          "font_size" : 48
+        },
+        "selected" : true
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{257, 5}, {58, 58}}",
+        "class" : "Label",
+        "attributes" : {
+          "uuid" : "4BD0194C-AC73-4F51-8936-6BFA2C63736D",
+          "flex" : "WHL",
+          "corner_radius" : 0,
+          "background_color" : "RGBA(0.376471,0.545098,0.329412,1.000000)",
+          "frame" : "{{85, 16}, {150, 32}}",
+          "border_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+          "border_width" : 2,
+          "alignment" : "center",
+          "text_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+          "text" : "E",
+          "font_name" : "<System>",
+          "class" : "Label",
+          "name" : "lbl4",
+          "font_size" : 48
+        },
+        "selected" : false
+      }
+    ],
+    "frame" : "{{0, 0}, {320, 64}}",
+    "class" : "View",
+    "attributes" : {
+      "custom_class" : "GuessView",
+      "enabled" : true,
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "flex" : ""
+    },
+    "selected" : false
+  }
+]

@@ -4,6 +4,7 @@ from clue_color import ClueColor
 from guess import Guess
 from wordbank import WordBank
 import random
+import clipboard
 
 class Wordle (object):
   def __init__(self):
@@ -17,8 +18,11 @@ class Wordle (object):
     self.cur_turn = 0
     self.total_turns = 6
   
-  def new_game(self):
-    self.word = random.choice(self.words.get_common())
+  def new_game(self, word=None):
+    if word:
+      self.word = word
+    else:
+      self.word = random.choice(self.words.get_common())
     self.guesses = []
     self.found = []
     self.fuzzy = []
@@ -71,13 +75,15 @@ def main():
   wb = WordBank()
   wordle.new_game()
   debug = False
-  helper = True
+  helper = False
+  print(wordle.word, end='\n'*50)
   while(True):
     if debug:
       guess = input(f'guess ({wordle.word}): ')
     else:
       guess = input(f'guess: ')
     g = wordle.guess(guess)
+    clipboard.set(g.colorstr)
     print(g.colorstr)
     if helper:
       wb.guess(g)

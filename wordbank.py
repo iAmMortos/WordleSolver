@@ -55,4 +55,23 @@ class WordBank (object):
       if valid:
         ws += [w]
     return ws
+    
+    
+if __name__ == '__main__':
+  from guess import Guess
+  from clue_color import ClueColor
+  wb = WordBank()
+  while True:
+    inp = input('guess: ')
+    word, cs = inp.split(' ')
+    colors = []
+    for c in cs:
+      if c == 'g':
+        colors += [ClueColor.GREEN]
+      elif c == 'y':
+        colors += [ClueColor.YELLOW]
+      else:
+        colors += [ClueColor.BLACK]
+    wb.guess(Guess(word, colors))
+    print(wb.status)
 

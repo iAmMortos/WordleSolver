@@ -23,3 +23,9 @@ class Words (object):
     
   def get_all(self):
     return sorted(self.common + self.uncommon)
+    
+    
+if __name__ == '__main__':
+  import random
+  words = Words()
+  print(random.choice(words.common))
